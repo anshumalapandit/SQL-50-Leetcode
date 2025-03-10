@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+#select Product.product_name, Sales.year, Sales.price from Product, Sales where Product.product_id=Sales.product_id
+#but this above query will give us TLE error 
+ #Why TLE Error Occurred:
+-- 1. Implicit join syntax does not optimize query execution efficiently.
+-- 2. Without proper indexing, it can cause a full table scan, increasing execution time.
+-- 3. Large datasets make nested loop joins slower, especially without indexes.
+select Product.product_name, Sales.year, Sales.price from Product Inner join Sales where Product.product_id=Sales.product_id
+# inner join faster hota hai as compared to implicitly join 
